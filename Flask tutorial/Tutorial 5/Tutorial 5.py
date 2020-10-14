@@ -36,7 +36,7 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
-@app.route("/test")
+@app.route("/test") # rr
 def test():
     return render_template("index.html")
 
