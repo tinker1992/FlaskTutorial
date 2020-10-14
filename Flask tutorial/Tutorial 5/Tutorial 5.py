@@ -36,5 +36,9 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
+@app.route("/test")
+def test():
+    return render_template("index.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
