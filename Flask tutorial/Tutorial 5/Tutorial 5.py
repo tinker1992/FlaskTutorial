@@ -13,7 +13,7 @@ def home():
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
-        session.permanent = True  # keep session in browser even close the browser
+        # session.permanent = True  # keep session in browser even close the browser
         user = request.form["nm"]
         session["user"] = user
         return redirect(url_for("user"))
@@ -35,6 +35,10 @@ def user():
 def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
+
+@app.route("/test") # rr
+def test():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
